@@ -67,8 +67,6 @@ foreach($results as $result)
             <li><a href="profile.php">Profile Settings</a></li>
               <li><a href="update-password.php">Update Password</a></li>
             <li><a href="my-booking.php">My Booking</a></li>
-            <li><a href="post-testimonial.php">Post a Testimonial</a></li>
-          <li><a href="my-testimonials.php">My Testimonial</a></li>
             <li><a href="logout.php">Sign Out</a></li>
             <?php } else { ?>
             <li><a href="#loginform"  data-toggle="modal" data-dismiss="modal">Profile Settings</a></li>
@@ -97,13 +95,13 @@ foreach($results as $result)
       <div class="collapse navbar-collapse" id="navigation">
         <ul class="nav navbar-nav">
           <li><div class="col-sm-3 col-md-2">
-          <div class="logo"> <a href="index.php"><img src="assets/images/logo.png" alt="image" style="width:162px;height:65px;"/></a> </div>
+          <div class="logo"> <a href="index.php"><img src="assets/images/logo.png" alt="image" style="width:114px;height:65px;"/></a> </div>
         </div></li>
-          <li><a href="index.php">Home</a>    </li>
+          <li><a href="index.php">Home</a></li>
 
           <li><a href="page.php?type=aboutus">About Us</a></li>
           <li><a href="bike-listing.php">Bike Listing</a>
-          <li><a href="page.php?type=faqs">FAQs</a></li>
+          <li><a href="faqs.php">FAQs</a></li>
           <li><a href="contact-us.php">Contact Us</a></li>
 
         </ul>

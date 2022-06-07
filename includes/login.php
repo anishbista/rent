@@ -2,7 +2,7 @@
 if(isset($_POST['login']))
 {
 $email=$_POST['email'];
-$password=md5($_POST['password']);
+$password=$_POST['password'];
 $sql ="SELECT EmailId,Password,FullName FROM tblusers WHERE EmailId=:email and Password=:password";
 $query= $dbh -> prepare($sql);
 $query-> bindParam(':email', $email, PDO::PARAM_STR);
@@ -58,7 +58,7 @@ echo "<script type='text/javascript'> document.location = '$currentpage'; </scri
       </div>
       <div class="modal-footer text-center">
         <p>Don't have an account? <a href="#signupform" data-toggle="modal" data-dismiss="modal">Signup Here</a></p>
-        <p><a href="#forgotpassword" data-toggle="modal" data-dismiss="modal">Forgot Password ?</a></p>
+
       </div>
     </div>
   </div>

@@ -100,14 +100,14 @@ a:hover, a:focus, .btn-link:hover {
 .main_bg, 
 .slider .slider-handle, .slider .slider-selection, 
 .primary-bg {
-  background: #fa2837 none repeat scroll 0 0;
-  fill: #fa2837;
+  background: #4a4444 none repeat scroll 0 0;
+  fill: #571519;
 }
 .btn:hover, .btn:focus, 
 .search_other:hover, 
 #other_info:hover {
-	background-color: #c60210;
-	fill: #fb4d59;
+	background-color: #285692;
+	fill: #5b0d5e;
 }
 
 .nav-tabs > li.active > a, 

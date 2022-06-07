@@ -111,6 +111,7 @@ $msg="Booking Successfully Confirmed";
 									<thead>
 										<tr>
 										<th>#</th>
+											<th>Email ID </th>
 											<th>Name</th>
 											<th>Vehicle</th>
 											<th>From Date</th>
@@ -136,7 +137,7 @@ $msg="Booking Successfully Confirmed";
 									</tfoot> -->
 									<tbody>
 
-									<?php $sql = "SELECT tblusers.FullName,tblbrands.BrandName,tblvehicles.VehiclesTitle,tblbooking.FromDate,tblbooking.ToDate,tblbooking.message,tblbooking.VehicleId as vid,tblbooking.Status,tblbooking.PostingDate,tblbooking.id  from tblbooking join tblvehicles on tblvehicles.id=tblbooking.VehicleId join tblusers on tblusers.EmailId=tblbooking.userEmail join tblbrands on tblvehicles.VehiclesBrand=tblbrands.id  ";
+									<?php $sql = "SELECT tblusers.EmailId,tblusers.FullName,tblbrands.BrandName,tblvehicles.VehiclesTitle,tblbooking.FromDate,tblbooking.ToDate,tblbooking.message,tblbooking.VehicleId as vid,tblbooking.Status,tblbooking.PostingDate,tblbooking.id  from tblbooking join tblvehicles on tblvehicles.id=tblbooking.VehicleId join tblusers on tblusers.EmailId=tblbooking.userEmail join tblbrands on tblvehicles.VehiclesBrand=tblbrands.id  ";
 $query = $dbh -> prepare($sql);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -147,6 +148,7 @@ foreach($results as $result)
 {				?>
 										<tr>
 											<td><?php echo htmlentities($cnt);?></td>
+											<td><?php echo htmlentities($result->EmailId);?></td>
 											<td><?php echo htmlentities($result->FullName);?></td>
 											<td><a href="edit-vehicle.php?id=<?php echo htmlentities($result->vid);?>"><?php echo htmlentities($result->BrandName);?> , <?php echo htmlentities($result->VehiclesTitle);?></td>
 											<td><?php echo htmlentities($result->FromDate);?></td>

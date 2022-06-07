@@ -5,13 +5,17 @@ if(isset($_POST['signup']))
 $fname=$_POST['fullname'];
 $email=$_POST['emailid']; 
 $mobile=$_POST['mobileno'];
-$password=md5($_POST['password']); 
-$sql="INSERT INTO  tblusers(FullName,EmailId,ContactNo,Password) VALUES(:fname,:email,:mobile,:password)";
+$password=$_POST['password']; 
+$vimage1=$_FILES["img1"]["name"];
+move_uploaded_file($_FILES["img1"]["tmp_name"],"img/".$_FILES["img1"]["name"]);
+$sql="INSERT INTO  tblusers(FullName,EmailId,ContactNo,Password,Vimage1) VALUES(:fname,:email,:mobile,:password,:vimage1)";
 $query = $dbh->prepare($sql);
 $query->bindParam(':fname',$fname,PDO::PARAM_STR);
 $query->bindParam(':email',$email,PDO::PARAM_STR);
 $query->bindParam(':mobile',$mobile,PDO::PARAM_STR);
 $query->bindParam(':password',$password,PDO::PARAM_STR);
+$query->bindParam(':vimage1',$vimage1,PDO::PARAM_STR);
+
 $query->execute();
 $lastInsertId = $dbh->lastInsertId();
 if($lastInsertId)
@@ -82,6 +86,10 @@ return true;
                 <div class="form-group">
                   <input type="password" class="form-control" name="confirmpassword" placeholder="Confirm Password" required="required">
                 </div>
+                <h5><b>Upload Valid Driving License</b></h5>
+                <div class="form-group">
+                <input type="file" class="form-control" name="img1" required="required">
+              
                 <div class="form-group checkbox">
                   <input type="checkbox" id="terms_agree" required="required" checked="">
                   <label for="terms_agree">I Agree with <a href="#">Terms and Conditions</a></label>

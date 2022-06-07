@@ -148,16 +148,6 @@ foreach($results as $result)
           <?php
          if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
           <form  method="post">
-           <div class="form-group">
-              <label class="control-label">Reg Date -</label>
-             <?php echo htmlentities($result->RegDate);?>
-            </div>
-             <?php if($result->UpdationDate!=""){?>
-            <div class="form-group">
-              <label class="control-label">Last Update at  -</label>
-             <?php echo htmlentities($result->UpdationDate);?>
-            </div>
-            <?php } ?>
             <div class="form-group">
               <label class="control-label">Full Name</label>
               <input class="form-control white_bg" name="fullname" value="<?php echo htmlentities($result->FullName);?>" id="fullname" type="text"  required>
@@ -173,10 +163,6 @@ foreach($results as $result)
             <div class="form-group">
               <label class="control-label">Date of Birth&nbsp;(dd/mm/yyyy)</label>
               <input class="form-control white_bg" value="<?php echo htmlentities($result->dob);?>" name="dob" placeholder="dd/mm/yyyy" id="birth-date" type="text" >
-            </div>
-            <div class="form-group">
-              <label class="control-label">Your Address</label>
-              <textarea class="form-control white_bg" name="address" rows="4" ><?php echo htmlentities($result->Address);?></textarea>
             </div>
             <div class="form-group">
               <label class="control-label">Country</label>

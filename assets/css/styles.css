@@ -251,7 +251,7 @@ blockquote {
 	color:#fff;
 }
 .btn.btn-xs {
-	font-size:12px;
+	font-size:11px;
 	padding:0px 25px;
 }
 .btn.btn-xs .fa {
@@ -1064,7 +1064,7 @@ nav.navbar {
 	3.1. Banner
 -------------------------------*/
 .banner-section {
-  background-image: url("../images/front-image.jpg");
+  background-image: url("../images/wallpaper.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;

@@ -87,7 +87,7 @@ $error="Something went wrong. Please try again";
 </head>
 <body>
 
-<<!-- Start Switcher -->
+<!-- Start Switcher -->
 <?php include('includes/colorswitcher.php');?>
 <!-- /Switcher -->
 
@@ -148,33 +148,23 @@ $error="Something went wrong. Please try again";
       <div class="col-md-6">
         <h3>Contact Info</h3>
         <div class="contact_detail">
-              <?php
-$pagetype=$_GET['type'];
-$sql = "SELECT Address,EmailId,ContactNo from tblcontactusinfo";
-$query = $dbh -> prepare($sql);
-$query->bindParam(':pagetype',$pagetype,PDO::PARAM_STR);
-$query->execute();
-$results=$query->fetchAll(PDO::FETCH_OBJ);
-$cnt=1;
-if($query->rowCount() > 0)
-{
-foreach($results as $result)
-{ ?>
-          <ul>
-            <li>
-              <div class="icon_wrap"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
-              <div class="contact_info_m"><?php   echo htmlentities($result->Address); ?></div>
-            </li>
-            <li>
-              <div class="icon_wrap"><i class="fa fa-phone" aria-hidden="true"></i></div>
-              <div class="contact_info_m"><a href="tel:61-1234-567-90"><?php   echo htmlentities($result->EmailId); ?></a></div>
-            </li>
-            <li>
-              <div class="icon_wrap"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
-              <div class="contact_info_m"><a href="mailto:codeprojectsorg@gmail.com"><?php   echo htmlentities($result->ContactNo); ?></a></div>
-            </li>
-          </ul>
-        <?php }} ?>
+        <h3 class="widgettitle widget-title">BikeRental</h3>
+			<div class="textwidget"><p><strong>Phone:</strong>&nbsp;0141416586<br>
+    <strong>Fax:</strong>&nbsp;0032 3 293 00 22</p>
+        <hr>
+      <p>General questions <a href="mailto:info@bkconsult.com">info@bkconsult.com</a><br>
+      Anish Bista <a href="mailto:anish.bista@agconsult.com">anish.bista@agconsult.com</a><br>
+     Sirish Chapagain <a href="mailto:sirish.chapagain@agconsult.com">sirish.chapagain@agconsult.com</a></p>
+      </div>
+		</div></section>
+<section id="text-4" class="widget widget_text"><div class="widget-wrap">			<div class="textwidget"><div class="related-commercial related-commercial-white entry-content" style="background-color:#F5F5F5;border-color:#F5F5F5;"><h4>OUR OFFICE</h4>
+<p>Gongabu Kathmandu<br>
+Street no 41 <br>
+<a href="https://www.google.com/maps/place/Asian+School+Of+Management+And+Technology/@27.7352488,85.3105783,17z/data=!3m1!4b1!4m5!3m4!1s0x39eb18d8bb00bcf1:0xb0b865521c12c0dd!8m2!3d27.7352488!4d85.312767">Route on Google Maps</a></p>
+</div>
+</div>
+		</div></section>
+</aside>
         </div>
       </div>
     </div>

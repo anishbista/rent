@@ -45,33 +45,22 @@ include('includes/config.php');
 <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
 </head>
 <body>
-<<!-- Start Switcher -->
+<!-- Start Switcher -->
 <?php include('includes/colorswitcher.php');?>
 <!-- /Switcher -->
 
 <!--Header-->
 <?php include('includes/header.php');?>
-                      <?php
-$pagetype=$_GET['type'];
-$sql = "SELECT type,detail,PageName from tblpages where type=:pagetype";
-$query = $dbh -> prepare($sql);
-$query->bindParam(':pagetype',$pagetype,PDO::PARAM_STR);
-$query->execute();
-$results=$query->fetchAll(PDO::FETCH_OBJ);
-$cnt=1;
-if($query->rowCount() > 0)
-{
-foreach($results as $result)
-{ ?>
+                      
 <section class="page-header aboutus_page">
   <div class="container">
     <div class="page-header_wrap">
       <div class="page-heading">
-        <h1><?php   echo htmlentities($result->PageName); ?></h1>
+        <h1>About Us </h1>
       </div>
       <ul class="coustom-breadcrumb">
         <li><a href="#">Home</a></li>
-        <li><?php   echo htmlentities($result->PageName); ?></li>
+        <li>About Us </li>
       </ul>
     </div>
   </div>
@@ -83,10 +72,9 @@ foreach($results as $result)
     <div class="section-header text-center">
 
 
-      <h2><?php   echo htmlentities($result->PageName); ?></h2>
-      <p><?php  echo $result->detail; ?> </p>
+      <h2>About Us</h2>
+      <p> <span style="color: rgb(0, 0, 0); font-family: &quot;Open Sans&quot;, Arial, sans-serif; text-align: justify;">WE ARE THE BIKE RENTAL MANAGER. The only 100% dedicated bike rental booking website. The first Bike Rental Manager (BRM) shop was our own bike shop. Ever Since it has been our aim to make bike rental easier for everyone, everywhere.We focus on making bike rentals easier for you.Your rental business has a unique set of challenges. We are the only dedicated bike rental site and will be able to offer you a solution to match your needs.Get in touch with us today! We provide affordable bike rates, we hae lost of Satiisfied customers feedback, you can have a look at our home page too!! </span> </p>
     </div>
-   <?php } }?>
   </div>
 </section>
 <!-- /About-us-->
